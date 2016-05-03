@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">Example Project For Testing</string>
+  <string name="visit_home_page">Visit book\'s home page at</string>
+  <string name="home">http://goo.gl/YUSmo</string>
+  <string name="capitalize_button">Capitalize</string>
+  <string name="message_hint">Enter message</string>
+  <string name="my_contacts">My Contacts Activity</string>
+  <string name="contacts_button">Show Contacts</string>
+</resources>
