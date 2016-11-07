@@ -76,7 +76,10 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     String actual = messageInput.getText().toString();
     String notExpectedRegexp = "(?i:ERROR)";
     assertNotContainsRegex("Capitalization found error:", notExpectedRegexp, actual);
+
+    assertEquals(actual, msg.toUpperCase());
   }
+
 
   public void testFollowLink() {
     IntentFilter intentFilter = new IntentFilter(Intent.ACTION_VIEW);
@@ -128,10 +131,15 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     requestMessageInputFocus();
 
     sendKeys(keysSequence);
+
+    //FIXME: when run gradlew connectedDebugAndroidTest -> 
+    // java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
+    //
     TouchUtils.clickView(this, capitalizeButton);
     String actual = messageInput.getText().toString();
-    assertEquals("URI_PATH_POJO ME", actual);
+    assertEquals("TEST ME", actual);
   }
+
 
   public void testStartContacts() {
     try {
